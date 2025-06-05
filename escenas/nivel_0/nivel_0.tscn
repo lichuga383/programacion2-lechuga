@@ -1,18 +1,144 @@
-[gd_scene load_steps=3 format=3 uid="uid://clkruifsox4m3"]
+[gd_scene load_steps=9 format=4 uid="uid://clkruifsox4m3"]
 
 [ext_resource type="PackedScene" uid="uid://cpvm2xewb5hsl" path="res://escenas/componentes/jugador/jugador.tscn" id="1_65a2r"]
+[ext_resource type="Script" uid="uid://df3sky3qwnh2g" path="res://escenas/nivel_0/save_manager.gd" id="2_i20ts"]
+[ext_resource type="Texture2D" uid="uid://d1h5nwpfv7jsy" path="res://assets/texturas/Terrain_32x32.png" id="3_lgf7k"]
+[ext_resource type="PackedScene" uid="uid://b7aa5mjldevy6" path="res://escenas/componentes/jugador/Moneda.tscn" id="4_dwkxn"]
+[ext_resource type="Script" uid="uid://cq0l82xkm4d6h" path="res://escenas/nivel_0/enemigos.gd" id="5_q37oy"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_65a2r"]
-size = Vector2(1136, 56)
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dwkxn"]
+texture = ExtResource("3_lgf7k")
+texture_region_size = Vector2i(32, 32)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.2502, -16.5688, 16.2502, -16.5688, 16.2502, 16.2502, -16.5688, 16.2502)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.2502, -16.5688, 16.2502, -16.5688, 16.2502, 16.2502, -16.5688, 16.2502)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.2502, -16.5688, 16.2502, -16.5688, 16.2502, 16.2502, -16.5688, 16.2502)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.2502, -16.5688, 16.2502, -16.5688, 16.2502, 16.2502, -16.5688, 16.2502)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.2502, -16.5688, 16.2502, -16.5688, 16.2502, 16.2502, -16.5688, 16.2502)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.2502, -16.5688, 16.2502, -16.5688, 16.2502, 16.2502, -16.5688, 16.2502)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.2502, -16.5688, 16.2502, -16.5688, 16.2502, 16.2502, -16.5688, 16.2502)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.2502, -16.5688, 16.2502, -16.5688, 16.2502, 16.2502, -16.5688, 16.2502)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.2502, -16.5688, 16.2502, -16.5688, 16.2502, 16.2502, -16.5688, 16.2502)
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.2502, -16.5688, 16.2502, -16.5688, 16.2502, 16.2502, -16.5688, 16.2502)
+5:2/0 = 0
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.2502, -16.5688, 16.2502, -16.5688, 16.2502, 16.2502, -16.5688, 16.2502)
+5:3/0 = 0
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.2502, -16.5688, 16.2502, -16.5688, 16.2502, 16.2502, -16.5688, 16.2502)
+7:2/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+8:2/0 = 0
+7:4/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+8:4/0 = 0
+10:4/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+11:4/0 = 0
+11:2/0 = 0
+10:2/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+13:1/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+14:1/0 = 0
+16:1/0 = 0
+16:2/0 = 0
+17:2/0 = 0
+14:4/0 = 0
+14:5/0 = 0
+13:5/0 = 0
+13:4/0 = 0
+16:4/0 = 0
+16:5/0 = 0
+17:5/0 = 0
+17:4/0 = 0
+16:7/0 = 0
+16:8/0 = 0
+17:8/0 = 0
+14:7/0 = 0
+13:7/0 = 0
+13:8/0 = 0
+14:8/0 = 0
+11:7/0 = 0
+10:7/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+8:7/0 = 0
+7:7/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+5:7/0 = 0
+5:8/0 = 0
+5:9/0 = 0
+5:5/0 = 0
+3:5/0 = 0
+2:5/0 = 0
+1:5/0 = 0
+2:7/0 = 0
+1:7/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+2:9/0 = 0
+1:9/0 = 0
+3:8/0 = 0
+3:7/0 = 0
+3:9/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+5:11/0 = 0
+7:10/0 = 0
+7:11/0 = 0
+8:11/0 = 0
+8:10/0 = 0
+10:10/0 = 0
+10:11/0 = 0
+11:11/0 = 0
+11:10/0 = 0
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_lgf7k"]
+scenes/1/scene = ExtResource("4_dwkxn")
+
+[sub_resource type="TileSet" id="TileSet_q37oy"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_dwkxn")
+sources/1 = SubResource("TileSetScenesCollectionSource_lgf7k")
 
 [node name="Nivel0" type="Node2D"]
 
 [node name="jugador" parent="." instance=ExtResource("1_65a2r")]
-position = Vector2(514, 110)
+position = Vector2(492, 767)
+velocidad = 250.0
+friccion_salto = 1000.0
+gravedad = 4000.0
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(-7, 419)
+[node name="SaveManager" type="Node" parent="."]
+script = ExtResource("2_i20ts")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(578, 18)
-shape = SubResource("RectangleShape2D_65a2r")
+[node name="PisoTileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAABABoAAAACAAEAAAAAABoAAAACAAEAAAACABoAAAACAAEAAAADABoAAAACAAEAAAAEABoAAAACAAEAAAAFABoAAAACAAEAAAAGABoAAAACAAEAAAAHABoAAAACAAEAAAAIABoAAAACAAEAAAAJABoAAAACAAEAAAAKABoAAAACAAEAAAALABoAAAACAAEAAAANABoAAAACAAEAAAAMABoAAAACAAEAAAAOABoAAAACAAEAAAAPABoAAAACAAEAAAAQABoAAAACAAEAAAARABoAAAACAAEAAAASABoAAAACAAEAAAATABoAAAACAAEAAAAUABoAAAACAAEAAAAVABoAAAACAAEAAAAWABoAAAACAAEAAAAXABoAAAACAAEAAAAYABoAAAACAAEAAAAdABoAAAACAAEAAAAcABoAAAACAAEAAAAbABoAAAACAAEAAAAaABoAAAACAAEAAAAZABoAAAACAAEAAAAjABoAAAACAAEAAAAiABoAAAACAAEAAAAhABoAAAACAAEAAAAgABoAAAACAAEAAAAfABoAAAACAAEAAAAeABoAAAACAAEAAAAAABsAAAACAAMAAAABABsAAAACAAMAAAACABsAAAACAAMAAAADABsAAAACAAMAAAAEABsAAAACAAMAAAAFABsAAAACAAMAAAAGABsAAAACAAMAAAAHABsAAAACAAMAAAAIABsAAAACAAMAAAAJABsAAAACAAMAAAAKABsAAAACAAMAAAALABsAAAACAAMAAAAMABsAAAACAAMAAAANABsAAAACAAMAAAAOABsAAAACAAMAAAAPABsAAAACAAMAAAAQABsAAAACAAMAAAARABsAAAACAAMAAAASABsAAAACAAMAAAATABsAAAACAAMAAAAUABsAAAACAAMAAAAVABsAAAACAAMAAAAWABsAAAACAAMAAAAXABsAAAACAAMAAAAYABsAAAACAAMAAAAZABsAAAACAAMAAAAaABsAAAACAAMAAAAbABsAAAACAAMAAAAcABsAAAACAAMAAAAdABsAAAACAAMAAAAeABsAAAACAAMAAAAfABsAAAACAAMAAAAgABsAAAACAAMAAAAhABsAAAACAAMAAAAiABsAAAACAAMAAAAjABsAAAACAAMAAAADABcAAAACAAEAAAAEABcAAAACAAEAAAAFABcAAAACAAEAAAAGABcAAAACAAEAAAAHABcAAAACAAEAAAAIABcAAAACAAEAAAAJABcAAAACAAEAAAALABQAAAACAAEAAAAMABQAAAACAAEAAAANABQAAAACAAEAAAAOABQAAAACAAEAAAAPABQAAAACAAEAAAAQABQAAAACAAEAAAARABQAAAACAAEAAAAZABYAAAACAAEAAAAaABYAAAACAAEAAAAbABYAAAACAAEAAAAbABUAAAACAAEAAAAcABUAAAACAAEAAAAdABUAAAACAAEAAAAeABQAAAACAAEAAAAfABQAAAACAAEAAAAgABQAAAACAAEAAAA=")
+tile_set = SubResource("TileSet_q37oy")
+
+[node name="ParedTileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD//xsAAAAFAAIAAAD//xoAAAAFAAIAAAD//xkAAAAFAAIAAAD//xgAAAAFAAIAAAD//xcAAAAFAAIAAAD//xYAAAAFAAIAAAD//xUAAAAFAAIAAAD//xQAAAAFAAIAAAA=")
+tile_set = SubResource("TileSet_q37oy")
+
+[node name="InteractuableTileMapLayer" type="TileMapLayer" parent="."]
+tile_set = SubResource("TileSet_q37oy")
+
+[node name="Enemigos" type="CharacterBody2D" parent="."]
+script = ExtResource("5_q37oy")
+hp = 100

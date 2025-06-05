@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bp2hkor3q6shw"
-path="res://.godot/imported/icon.svg-52e83e303d25826f549f82e6a8cd647d.ctex"
+uid="uid://d1h5nwpfv7jsy"
+path="res://.godot/imported/Terrain_32x32.png-b1b9e1b19d29027c4bfe750ae5c5bf9c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/texturas/icon.svg"
-dest_files=["res://.godot/imported/icon.svg-52e83e303d25826f549f82e6a8cd647d.ctex"]
+source_file="res://assets/texturas/Terrain_32x32.png"
+dest_files=["res://.godot/imported/Terrain_32x32.png-b1b9e1b19d29027c4bfe750ae5c5bf9c.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

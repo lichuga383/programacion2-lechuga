@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://cpvm2xewb5hsl"]
+[gd_scene load_steps=44 format=3 uid="uid://cpvm2xewb5hsl"]
 
 [ext_resource type="Script" uid="uid://brao1w7j1yavh" path="res://escenas/componentes/jugador/jugador.gd" id="1_6on4n"]
 [ext_resource type="Texture2D" uid="uid://b2lotbmjdvqqp" path="res://assets/texturas/jogador/attack.png" id="2_ouxw5"]
@@ -8,8 +8,10 @@
 [ext_resource type="Script" uid="uid://c3bxd48rjbvpd" path="res://escenas/componentes/maquina_estado/maquina_estado.gd" id="6_lde6h"]
 [ext_resource type="Script" uid="uid://cw4wvwute0kkh" path="res://escenas/componentes/jugador/estados/quieto.gd" id="7_ouxw5"]
 [ext_resource type="Script" uid="uid://pc1qqsnqpna" path="res://escenas/componentes/jugador/estados/cayendo.gd" id="8_gk1eg"]
+[ext_resource type="Script" uid="uid://b60jvrrwbog2s" path="res://escenas/componentes/jugador/atacar.gd" id="8_lde6h"]
 [ext_resource type="Script" uid="uid://dmgod5gwqabrk" path="res://escenas/componentes/jugador/estados/correr.gd" id="9_udejt"]
 [ext_resource type="Script" uid="uid://c5d1w1rg151m" path="res://escenas/componentes/jugador/estados/saltando.gd" id="10_y0sdt"]
+[ext_resource type="PackedScene" uid="uid://bmmw7qnbtrirv" path="res://escenas/componentes/UAI/HUD/hud.tscn" id="12_lbvop"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6on4n"]
 size = Vector2(18, 45)
@@ -148,7 +150,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_p5lbb")
 }],
-"loop": true,
+"loop": false,
 "name": &"Atacar",
 "speed": 10.0
 }, {
@@ -254,10 +256,12 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="jugador" type="CharacterBody2D" node_paths=PackedStringArray("sprite")]
+[node name="jugador" type="CharacterBody2D" node_paths=PackedStringArray("sprite", "hud")]
 position = Vector2(-2, -3)
 script = ExtResource("1_6on4n")
+gravedad = 2000.0
 sprite = NodePath("AnimatedSprite2D")
+hud = NodePath("CanvasLayer/HUD")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 1.5)
@@ -266,6 +270,7 @@ shape = SubResource("RectangleShape2D_6on4n")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ob43r")
 animation = &"Saltar"
+frame = 3
 
 [node name="MaquinaEstado" type="Node" parent="." node_paths=PackedStringArray("jugador")]
 script = ExtResource("6_lde6h")
@@ -275,6 +280,11 @@ metadata/_custom_type_script = "uid://c3bxd48rjbvpd"
 [node name="Quieto" type="Node" parent="MaquinaEstado"]
 script = ExtResource("7_ouxw5")
 metadata/_custom_type_script = "uid://dhf0jwem8m42g"
+
+[node name="Atacar" type="Node" parent="MaquinaEstado" node_paths=PackedStringArray("hitbox")]
+script = ExtResource("8_lde6h")
+hitbox = NodePath("../../Area2D")
+poder_ataque = 25
 
 [node name="Cayendo" type="Node" parent="MaquinaEstado"]
 script = ExtResource("8_gk1eg")
@@ -287,3 +297,17 @@ metadata/_custom_type_script = "uid://dhf0jwem8m42g"
 [node name="Saltando" type="Node" parent="MaquinaEstado"]
 script = ExtResource("10_y0sdt")
 metadata/_custom_type_script = "uid://dhf0jwem8m42g"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="CanvasLayer" instance=ExtResource("12_lbvop")]
+offset_left = -2.0
+offset_top = -3.0
+offset_right = -2.0
+offset_bottom = -3.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]

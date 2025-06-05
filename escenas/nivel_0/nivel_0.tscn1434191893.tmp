@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://clkruifsox4m3"]
+
+[ext_resource type="PackedScene" uid="uid://cpvm2xewb5hsl" path="res://escenas/componentes/jugador/jugador.tscn" id="1_65a2r"]
+[ext_resource type="Script" uid="uid://df3sky3qwnh2g" path="res://escenas/nivel_0/save_manager.gd" id="2_i20ts"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_65a2r"]
+size = Vector2(1136, 56)
+
+[node name="Nivel0" type="Node2D"]
+
+[node name="jugador" parent="." instance=ExtResource("1_65a2r")]
+position = Vector2(514, 110)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-7, 419)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(578, 18)
+shape = SubResource("RectangleShape2D_65a2r")
+
+[node name="SaveManager" type="Node" parent="."]
+script = ExtResource("2_i20ts")

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7aa5mjldevy6"]
+
+[ext_resource type="Texture2D" uid="uid://p8ojb6db4mbs" path="res://assets/texturas/jogador/star_particle.png" id="1_w7w5k"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n63w5"]
+radius = 16.0
+
+[node name="Node2D" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.25, 0.25)
+shape = SubResource("CircleShape2D_n63w5")
+
+[node name="StarParticle" type="Sprite2D" parent="."]
+texture = ExtResource("1_w7w5k")
